@@ -5,7 +5,7 @@ var name = "Banco de Tempo Blumenau";
 var express = require('express');
 var bodyParser = require('body-parser')
 var app = express();
-
+var request = require('request');
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -119,7 +119,7 @@ function sendTextMessage(recipientId, messageText) {
 }
 
 function callSendAPI(messageData) {
-  req({
+  request({
     uri: 'https://graph.facebook.com/v2.6/me/messages',
     qs: { access_token: PAGE_ACCESS_TOKEN },
     method: 'POST',
