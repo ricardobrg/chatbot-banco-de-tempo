@@ -1,5 +1,6 @@
 var verify_token = "pissiti";
 var name = "Banco de Tempo Blumenau";
+var page_token = "EAAEz2Yls3C0BAMvKdjBdO05Sufp55lIPcfBb2RORF6Rg0wqg6UwzvZB2ZBR0sCpQyr3KkR2uzAjWHUizHppTL3qB7Wcn9dkaZCHt0p7WZCkUqbgt47JWt0R0UKo9lZBdJtZBGA1rXcnh8DnF1HMQNapjTKhyNePIiePthUKX3gMAZDZD";
 
 // -- NÃO EDITAR ABAIXO DESSA LINHA!!! --
 var express = require('express');
@@ -121,7 +122,7 @@ function sendTextMessage(recipientId, messageText) {
 function callSendAPI(messageData) {
   request({
     uri: 'https://graph.facebook.com/v2.6/me/messages',
-    qs: { access_token: PAGE_ACCESS_TOKEN },
+    qs: { access_token: page_token },
     method: 'POST',
     json: messageData
 
