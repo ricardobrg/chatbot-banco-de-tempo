@@ -3,7 +3,14 @@ var name = "Banco de Tempo Blumenau";
 
 // -- NÃO EDITAR ABAIXO DESSA LINHA!!! --
 var express = require('express');
+var bodyParser = require('body-parser')
 var app = express();
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -22,7 +29,7 @@ app.get('/', function(req, res) {
 //messages processing
 app.post('/', function(req, res) {
    var data = req.body;
-  console.log(data);
+
   // Make sure this is a page subscription
   if (data.object === 'page') {
     // Iterate over each entry - there may be multiple if batched
