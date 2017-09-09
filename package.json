@@ -1,0 +1,28 @@
+{
+  "name": "chatbot-banco-de-tempo",
+  "version": "1.0.0",
+  "description": "Chatbot para automatizar tarefas de cadastro e integração com Google Sheets nos bancos de tempo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricardobrg/chatbot-banco-de-tempo.git"
+  },
+  "keywords": [
+    "banco",
+    "de",
+    "tempo",
+    "chatbot"
+  ],
+  "author": "Ricardo Gonçalves <ricardo@brgweb.com.br> (http://brgweb.com.br)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ricardobrg/chatbot-banco-de-tempo/issues"
+  },
+  "homepage": "https://github.com/ricardobrg/chatbot-banco-de-tempo#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
