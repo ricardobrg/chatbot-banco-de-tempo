@@ -2,6 +2,8 @@ var verify_token = "pissiti";
 var name = "Banco de Tempo Blumenau";
 var page_token = "EAAEz2Yls3C0BAMvKdjBdO05Sufp55lIPcfBb2RORF6Rg0wqg6UwzvZB2ZBR0sCpQyr3KkR2uzAjWHUizHppTL3qB7Wcn9dkaZCHt0p7WZCkUqbgt47JWt0R0UKo9lZBdJtZBGA1rXcnh8DnF1HMQNapjTKhyNePIiePthUKX3gMAZDZD";
 
+var spreadsheetId = spreadsheetId;
+
 // -- NÃO EDITAR ABAIXO DESSA LINHA!!! --
 var express = require('express');
 var bodyParser = require('body-parser')
@@ -140,3 +142,51 @@ function callSendAPI(messageData) {
     }
   });  
 }
+//GOOGLE
+var google = require('googleapis');
+var sheets = google.sheets('v4');
+
+authorize(function(authClient) {
+  var request = {
+    // The ID of the spreadsheet to update.
+    spreadsheetId: spreadsheetId,
+
+    // Values will be appended after the last row of the table.
+    range: 'A1',
+
+    resource: {
+      // TODO: Add desired properties to the request body.
+    },
+
+    auth: authClient,
+  };
+
+  sheets.spreadsheets.values.append(request, function(err, response) {
+    if (err) {
+      console.error(err);
+      return;
+    }
+
+    // TODO: Change code below to process the `response` object:
+    console.log(JSON.stringify(response, null, 2));
+  });
+});
+
+function authorize(callback) {
+  // TODO: Change placeholder below to generate authentication credentials. See
+  // https://developers.google.com/sheets/quickstart/nodejs#step_3_set_up_the_sample
+  //
+  // Authorize using one of the following scopes:
+  //   'https://www.googleapis.com/auth/drive'
+  //   'https://www.googleapis.com/auth/drive.file'
+  //   'https://www.googleapis.com/auth/spreadsheets'
+  var authClient = null;
+
+  if (authClient == null) {
+    console.log('authentication failed');
+    return;
+  }
+  callback(authClient);
+}
+
+
