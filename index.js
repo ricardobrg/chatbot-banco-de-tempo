@@ -1,4 +1,4 @@
-var verify_token = "";
+var verify_token = "pissiti";
 var name = "Banco de Tempo Blumenau";
 
 // -- NÃO EDITAR ABAIXO DESSA LINHA!!! --
